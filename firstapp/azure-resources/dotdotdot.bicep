@@ -12,3 +12,4 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
     accessTier: 'Hot'
   }
 }
+resource bahaa microsoft.'Microsoft.ScVmm/virtualNetworks@'
