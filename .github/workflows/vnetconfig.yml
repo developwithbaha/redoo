@@ -24,5 +24,5 @@ jobs:
         with:
           creds: ${{ secrets.baha }}
       
-      - name: 'all groups'    
+  
       - run: az group list
