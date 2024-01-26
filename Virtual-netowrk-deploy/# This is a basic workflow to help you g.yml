@@ -25,7 +25,4 @@ jobs:
       - uses: Azure/login@v1.6.1
         with:
           creds: ${{ secrets.NEWSECRET }}
-      - name: list all resourse groups
-      - runs: |
-          az group list
-          
+      
