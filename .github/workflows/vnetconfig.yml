@@ -24,4 +24,5 @@ jobs:
       - uses: Azure/login@v1.6.1
         with:
           creds: ${{ secrets.baha }}
-          
+      
+          run: az group list
