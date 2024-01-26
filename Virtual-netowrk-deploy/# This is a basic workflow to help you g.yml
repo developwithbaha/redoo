@@ -28,5 +28,5 @@ jobs:
           
       - uses: Azure/login@v1.6.1
         with:
-          creds: ${{ secrets.azure_secrets }}
+          creds: ${{ secrets.AZURE_SECRETS }}
           
