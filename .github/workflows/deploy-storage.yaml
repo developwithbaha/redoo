@@ -11,7 +11,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  -build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -23,16 +23,15 @@ jobs:
       - uses: Azure/login@v1.6.1
         with:
           creds: ${{ secrets.baha }}
-      
-  Deploy:
-     runs-on: ubuntu-latest
-      steps:
-      - run: az group list
+    -Deploy:
+       runs-on: ubuntu-latest
+       steps:
+          - run: az group list
 
-      - name: Deploy Bicep file
-        uses: azure/arm-deploy@v1
-        with:
-         subscriptionId: 0c92d9fb-c043-40a4-b483-675cc3e84e07
-         resourceGroupName: Server-RG
-         template: ./firstapp/azure-resources/storageaccounts.bicep
+          - name: Deploy Bicep file
+            uses: azure/arm-deploy@v1
+            with:
+            subscriptionId: 0c92d9fb-c043-40a4-b483-675cc3e84e07
+            resourceGroupName: Server-RG
+            template: ./firstapp/azure-resources/storageaccounts.bicep
           
