@@ -26,6 +26,6 @@ jobs:
       
   
       - run: |
-          az group list
-          az deployment group -n Server-RG --template-file './firstapp/azure-resources/storageaccounts.bicep'
+          Get-AzResourceGroup 
+          new-azresourcegroupdeployment -ResourceGroupName Server-RG -TemplateFile .\redoo\firstapp\azure-resources\storageaccounts.bicep 
     
