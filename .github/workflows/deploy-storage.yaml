@@ -27,5 +27,5 @@ jobs:
   
       - run: |
           az group list
-          az deployment group create --resource-group Server-RG -TemplateFile storageaccounts.bicep
+          az deployment group create --resource-group Server-RG --template-file storageaccounts.bicep
     
