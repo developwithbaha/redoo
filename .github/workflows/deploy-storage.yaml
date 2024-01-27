@@ -24,7 +24,7 @@ jobs:
         with:
           creds: ${{ secrets.baha }}
       
-    Deploy:
+  Deploy:
      runs-on: ubuntu-latest
       steps:
       - run: az group list
