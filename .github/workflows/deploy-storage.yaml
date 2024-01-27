@@ -25,4 +25,7 @@ jobs:
           creds: ${{ secrets.baha }}
       
   
-      - run: az group list
+      - run: |
+          az group list
+          az deployment group -n Server-RG --template-file './firstapp/azure-resources/storageaccounts.bicep'
+    
