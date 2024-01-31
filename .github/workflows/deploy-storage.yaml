@@ -23,8 +23,21 @@ jobs:
       - uses: Azure/login@v1.6.1
         with:
           creds: ${{ secrets.baha }}
+<<<<<<< HEAD
       
   
       - run: |
          az group list
          az deployment group -n Server-RG --template-file './firstapp/azure-resources/storageaccounts.bicep'
+=======
+
+      - run: az group list
+
+      - name: Deploy Bicep file
+        uses: azure/arm-deploy@v1
+        with:
+            subscriptionId: 0c92d9fb-c043-40a4-b483-675cc3e84e07
+            resourceGroupName: Server-RG
+            template: ./firstapp/azure-resources/storageaccounts.bicep
+          
+>>>>>>> 33b814ffe6e3eb957ad2e84c30471ebd13351ab0
