@@ -1,0 +1,24 @@
+name: deploying storage
+
+on: 
+ workflow_dispatch
+
+jobs:
+    build-deploy:
+        Steps:
+         - name: storage account
+           runs-on: ubuntu-lastest
+
+         - name: Checkout the code
+          uses: actions/checkout@v3
+
+         - uses: Azure/login@v1.6.1
+           with:
+             cred: ${{secrets.baha}}
+
+        -name: Deploy Storage account
+        uses: actions/arm-deploy@v1 
+        with:
+                subscriptionId: 0c92d9fb-c043-40a4-b483-675cc3e84e07
+                resourceGroupName: Server-RG
+                template: ./firstapp/azure-resources/resources.bicep
