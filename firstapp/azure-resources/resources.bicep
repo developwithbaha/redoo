@@ -11,10 +11,10 @@ resource stg1 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 name: '${names}stg1'
 location: location
 sku: {
-name: 'Premium_LRS'
-  }
-   kind: 'BlobStorage' 
-   properties: {
-    accessTier: 'Hot'
-  }
+  name: 'Standard_LRS'
+}
+kind: 'StorageV2'
+properties: {
+  accessTier: 'Hot'
+}
   }
