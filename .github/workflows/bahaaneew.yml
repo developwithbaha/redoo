@@ -5,23 +5,20 @@ on:
 
 jobs:
     build-deploy:
-        Steps:
-         - name: storage account
-           runs-on: ubuntu-lastest
+      runs-on: ubuntu-latest
 
-         - name: Checkout the code
-          uses: actions/checkout@v3
+     Steps:       
+     -  uses: actions/checkout@v3
 
-         - uses: Azure/login@v1.6.1
-           with:
+     -  uses: Azure/login@v1.6.1
+        with:
              cred: ${{secrets.baha}}
 
-         - run: az group list
-             
+     - run: az group list
 
-        -name: Deploy Storage account
-        uses: actions/arm-deploy@v1 
-        with:
-                subscriptionId: 0c92d9fb-c043-40a4-b483-675cc3e84e07
-                resourceGroupName: Server-RG
-                template: ./firstapp/azure-resources/resources.bicep
+     - name: Deploy Storage account
+       uses: Azure/arm-deploy@v1 
+       with:
+          subscriptionId: 0c92d9fb-c043-40a4-b483-675cc3e84e07
+          resourceGroupName: Server-RG
+          template: ./firstapp/azure-resources/resources.bicep
