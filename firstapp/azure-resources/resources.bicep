@@ -1,9 +1,9 @@
 @description('this file to deploy Vnet_storage _Rg')
 
 param names string = 'redoo'
-targetScope = 'resourceGroup'
 
 param location string = 'eastus'
+targetScope = 'resourceGroup'
 
 
 @description('storage details')
