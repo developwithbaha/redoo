@@ -11,7 +11,7 @@ jobs:
 
        -  uses: Azure/login@v1.6.1
           with:
-             cred: ${{secrets.green}}
+             cred: ${{secrets.newsecret}}
 
        - run: az group list
 
