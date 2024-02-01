@@ -1,4 +1,4 @@
-name: deploying storage 4444
+name: Only Resource Group
 
 on: 
   workflow_dispatch:
@@ -11,6 +11,6 @@ jobs:
 
        - uses: Azure/login@v1.6.1
          with:
-            cred: ${{secrets.newsecret}}
+             creds: ${{secrets.newsecret}}
 
        - run: az group list
