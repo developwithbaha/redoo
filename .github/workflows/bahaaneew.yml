@@ -13,4 +13,4 @@ jobs:
          with:
              creds: ${{secrets.newsecret}}
 
-       - run: az group list
+       - run: az account list
