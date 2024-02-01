@@ -19,7 +19,5 @@ jobs:
              tenant-id: ${{secrets.TENANT_ID}}
              subscription-id: ${{secrets.SUBSCRIPTION_ID}}
 
-       - run: |
-          az account list
-          az group list
+       - run: Get-AzResourceGroup
           
