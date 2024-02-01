@@ -9,9 +9,11 @@ jobs:
       steps:       
        -  uses: actions/checkout@v3
 
-       -  uses: Azure/login@v1.6.1
-          with:
-             creds: ${{secrets.newsecret}}
+       - uses: Azure/login@v1.6.1
+         with:
+             client-id: ${{secrets.CLIENT_ID}}
+             tenant-id: ${{secrets.TENANT_ID}}
+             subscription-id: ${{secrets.SUBSCRIPTION_ID}}
 
        - run: az group list
 
@@ -19,5 +21,5 @@ jobs:
          uses: Azure/arm-deploy@v1 
          with:
            subscriptionId: 0c92d9fb-c043-40a4-b483-675cc3e84e07
-           resourceGroupName: Server-RG
+           resourceGroupName: RedooONE-rg
            template: ./firstapp/azure-resources/network.bicep
