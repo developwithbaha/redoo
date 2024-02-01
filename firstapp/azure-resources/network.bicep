@@ -17,7 +17,33 @@ param subnet2Prefix string = '10.0.1.0/24'
 param subnet2Name string = 'Subnet2'
 
 @description('Location for all resources.')
+//param location string = resourceGroup().location
+
+
+//param location1 string = 'east us'
 param location string = resourceGroup().location
+param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
+
+/*resource nygroup 'Microsoft.Resources/resourceGroups@2023-07-01' existing = {
+  name: 'Server-RG'
+  location: location1
+
+}*/
+
+
+resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
+  name: storageAccountName
+  location: location
+  sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'StorageV2'
+  properties: {
+    accessTier: 'Hot'
+  }
+}
+
+
 
 resource vnet 'Microsoft.Network/virtualNetworks@2021-08-01' = {
   name: vnetName
