@@ -11,6 +11,8 @@ jobs:
 
        - uses: Azure/login@v1.6.1
          with:
-             creds: ${{secrets.newsecret}}
+             client-id: ${{secrets.CLIENT_ID}}
+             tenant-id: ${{secrets.TENANT_ID}}
+             subscription-id: ${{secrets.SUBSCIPTION_ID}}
 
        - run: az account list
