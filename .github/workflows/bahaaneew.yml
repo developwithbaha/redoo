@@ -19,5 +19,7 @@ jobs:
              tenant-id: ${{secrets.TENANT_ID}}
              subscription-id: ${{secrets.SUBSCRIPTION_ID}}
 
-       - run: Get-AzResourceGroup
+       - run: |
+            az account list
+            az group create -n Bahaa-rg l- eastus
           
